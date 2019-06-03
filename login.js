@@ -1,5 +1,9 @@
 module.exports = async (page) => {
   const navigationPromise = page.waitForNavigation()
+  const userInfo = {
+    userName: 'xxx',
+    pwd: 'xxx',
+  }
 
   await page.goto('http://sentry.dian.so/auth/login/sentry/')
 
@@ -22,14 +26,14 @@ module.exports = async (page) => {
   await page.waitForSelector('#login > .form-stacked > #div_id_username > .controls > #id_username')
   await page.type(
     '#login > .form-stacked > #div_id_username > .controls > #id_username',
-    'nazi@dian.so',
+    userInfo.userName,
     { delay: 50 }
   )
 
   await page.waitForSelector('#login > .form-stacked > #div_id_password > .controls > #id_password')
   await page.type(
     '#login > .form-stacked > #div_id_password > .controls > #id_password',
-    'nazi1985',
+    userInfo.pwd,
     { delay: 50 }
   )
 

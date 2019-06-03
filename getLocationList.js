@@ -7,7 +7,7 @@ async function getLocation ({ ip }) {
   const result = await rp({
     uri: `http://api.ipstack.com/${ip}`,
     qs: {
-      access_key: 'b0c6fc0df1ae9b755a27bcb724064333',
+      access_key: 'xxx',
       fields: 'region_name,city,latitude,longitude,ip',
       language: 'zh',
       output: 'json',
