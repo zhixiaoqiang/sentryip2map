@@ -1,5 +1,6 @@
 const fse = require('fs-extra')
 const csv = require('csvtojson')
+const dingTalk = require('./dingTalk')
 
 module.exports.puppeteer = async page => {
   const navigationPromise = page.waitForNavigation()
@@ -64,8 +65,9 @@ module.exports.puppeteer = async page => {
     isComplete = pageProps.isComplete
     if (isComplete) {
       try {
-        await fse.writeJson('./data/ipList.json', totalIps)
+        // await fse.writeJson('./data/ipList.json', totalIps)
         console.log(`已获取全部ip! 共${totalIps.length}个`)
+        await dingTalk({ text: `已获取全部ip! 共${totalIps.length}个` })
         return totalIps
       } catch (err) {
         console.error(err)
