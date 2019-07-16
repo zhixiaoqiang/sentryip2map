@@ -13,7 +13,7 @@ const getUserIp = require('./getUserIp.js')
 
   await login(page)
 
-  await page.goto('http://sentry.dian.so/sentry/xds/issues/7315/tags/user/')
+  await page.goto('http://sentry.xx.xx/sentry/xds/issues/7315/tags/user/')
 
   // 方案一：
   // 导出csv => json => 第三方api获取到location

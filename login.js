@@ -5,7 +5,7 @@ module.exports = async (page) => {
     pwd: 'xxx',
   }
 
-  await page.goto('http://sentry.dian.so/auth/login/sentry/')
+  await page.goto('http://sentry.xx.xx/auth/login/sentry/')
 
   await navigationPromise
 
